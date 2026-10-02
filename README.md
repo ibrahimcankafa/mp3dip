@@ -37,16 +37,22 @@ pip install yt-dlp
 
 ## Kullanım
 
-### 1. Şarkı listeni hazırla
+### 1. Şarkı listeni oluştur
 
-`sarkilar.txt` dosyasına indirmek istediğin şarkıları her satıra bir tane olacak şekilde yaz:
+Proje klasöründe `sarkilar.txt` adında bir dosya oluştur ve indirmek istediğin şarkıları her satıra bir tane olacak şekilde yaz:
+
+```bash
+# Dosyayı oluştur (Windows)
+notepad sarkilar.txt
+```
 
 ```
-karabiberim
-havhavhav
-cybersex doja cat
-numb linkin park
+stairway to heaven
+bohemian rhapsody
+şımarık tarkan
 ```
+
+> **İpucu:** Şarkının yanına sanatçı adını da yazarsan daha doğru sonuç bulur (ör. `numb linkin park`).
 
 ### 2. Çalıştır
 
@@ -59,10 +65,9 @@ python main.py
 İndirme tamamlandığında `sarkilar.txt` otomatik güncellenir:
 
 ```
-karabiberim | Serdar Ortaç - Karabiberim (Official Video).mp3
-havhavhav | LVBEL C5 - HAVHAVHAV.mp3
-cybersex doja cat | Doja Cat - Cyber Sex (Official Video).mp3
-numb linkin park | Numb (Official Music Video) - Linkin Park.mp3
+stairway to heaven | Led Zeppelin - Stairway To Heaven (Official Audio).mp3
+bohemian rhapsody | Queen – Bohemian Rhapsody (Official Video Remastered).mp3
+şımarık tarkan | Tarkan - Şımarık (Official Video).mp3
 ```
 
 Böylece hangi şarkının hangi dosya adıyla indiğini görebilirsin. Tekrar çalıştırdığında bu şarkılar atlanır.
@@ -73,33 +78,42 @@ Böylece hangi şarkının hangi dosya adıyla indiğini görebilirsin. Tekrar �
 
 ```
 mp3dip/
-├── main.py              # Ana script
-├── sarkilar.txt         # Şarkı listesi (arama terimi | indirilen dosya adı)
-├── mp3/                 # İndirilen MP3 dosyaları
-├── indirilemeyenler.txt # Başarısız indirmeler ve sebepleri (otomatik oluşur)
-└── README.md
+├── main.py                # Ana script
+├── README.md
+├── .gitignore
+├── sarkilar.txt           # ⚠ Kendin oluşturmalısın (repoya dahil değil)
+├── mp3/                   # İndirilen MP3 dosyaları (repoya dahil değil)
+└── indirilemeyenler.txt   # Başarısız indirmeler (otomatik oluşur, repoya dahil değil)
 ```
 
 ## Çıktı Örneği
 
 ```
-⏭ 2 şarkı zaten indirilmiş, atlanıyor:
-   • karabiberim → Serdar Ortaç - Karabiberim (Official Video).mp3
-   • havhavhav → LVBEL C5 - HAVHAVHAV.mp3
+🎵 Toplam 3 şarkı indirilecek...
 
-🎵 Toplam 1 şarkı indirilecek...
-
-[1/1] ▶ Aranıyor: mokali...
-  ↳ Bulunan video: Organize x Lvbel C5 x Ezhel - CADDE BOSTAN 2.0 (Mokali Mix)
+[1/3] ▶ Aranıyor: stairway to heaven...
+  ↳ Bulunan video: Led Zeppelin - Stairway To Heaven (Official Audio)
   ↳ İndiriliyor...
-✔ Başarıyla indirildi: mokali → Organize x Lvbel C5 x Ezhel - CADDE BOSTAN 2.0 (Mokali Mix).mp3
+✔ Başarıyla indirildi: stairway to heaven → Led Zeppelin - Stairway To Heaven (Official Audio).mp3
+⏳ Sıradaki şarkıya geçmeden önce 3 saniye bekleniyor...
+
+[2/3] ▶ Aranıyor: bohemian rhapsody...
+  ↳ Bulunan video: Queen – Bohemian Rhapsody (Official Video Remastered)
+  ↳ İndiriliyor...
+✔ Başarıyla indirildi: bohemian rhapsody → Queen – Bohemian Rhapsody (Official Video Remastered).mp3
+⏳ Sıradaki şarkıya geçmeden önce 3 saniye bekleniyor...
+
+[3/3] ▶ Aranıyor: şımarık tarkan...
+  ↳ Bulunan video: Tarkan - Şımarık (Official Video)
+  ↳ İndiriliyor...
+✔ Başarıyla indirildi: şımarık tarkan → Tarkan - Şımarık (Official Video).mp3
 
 ══════════════════════════════════════════════════
   📊 İNDİRME RAPORU
 ══════════════════════════════════════════════════
-  ✔ Başarılı: 1/1
-  ⏭ Zaten indirilmiş: 2
-  ✖ Başarısız: 0/1
+  ✔ Başarılı: 3/3
+  ⏭ Zaten indirilmiş: 0
+  ✖ Başarısız: 0/3
 ══════════════════════════════════════════════════
 
 🎉 Tüm şarkılar başarıyla indirildi!

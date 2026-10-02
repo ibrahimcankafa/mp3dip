@@ -7,6 +7,9 @@ venv/
 # Otomatik oluşan dosyalar
 indirilemeyenler.txt
 
+# Kişisel şarkı listesi
+sarkilar.txt
+
 # Python
 __pycache__/
 *.pyc
