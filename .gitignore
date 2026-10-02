@@ -1,0 +1,17 @@
+# İndirilen şarkılar
+mp3/
+
+# Sanal ortam
+venv/
+
+# Otomatik oluşan dosyalar
+indirilemeyenler.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
